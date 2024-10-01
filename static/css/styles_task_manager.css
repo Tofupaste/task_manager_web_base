@@ -1,0 +1,41 @@
+/* task_manager.css */
+
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  h2 {
+    color: #343a40;
+  }
+  
+  .list-group-item {
+    background-color: #fff;
+    margin-top: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .task-status {
+    font-weight: bold;
+  }
+  
+  .task-status.completed {
+    color: green;
+  }
+  
+  .task-status.pending {
+    color: red;
+  }
+  
+  .btn {
+    margin-right: 5px;
+  }
+  

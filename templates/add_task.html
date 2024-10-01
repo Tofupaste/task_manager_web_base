@@ -1,0 +1,30 @@
+<!-- add_task.html -->
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Add Task</title>
+<link rel="stylesheet" href="static/css/styles_add_task.css">
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="w-50 mx-auto">
+        <h3>Add Task</h3>
+        <form method="post">
+            <div class="mb-3">
+                <label for="task_name" class="form-label">Task Name</label>
+                <input name="task_name" id="task_name" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="deadline" class="form-label">Deadline</label>
+                <input name="deadline" id="deadline" type="datetime-local" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

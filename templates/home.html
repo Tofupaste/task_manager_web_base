@@ -1,0 +1,44 @@
+<!-- home.html -->
+
+{% extends 'layout.html' %}
+
+{% block head %}
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_home.css') }}">
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <h2>Welcome, {{ session['username'] }}!</h2>
+    <div class="task-section">
+      <h3>Upcoming Tasks</h3>
+      <ul style="padding-left: 20px;">
+        {% for task in upcoming_tasks %}
+          <li>{{ task[0] }} - Deadline: {{ task[1].strftime('%Y-%m-%d %H:%M:%S') }}</li>
+        {% endfor %}
+      </ul>
+    </div>      
+
+    <div class="statistics-section">
+      <h3>Task Statistics</h3>
+      <p>Total Tasks: {{ total_tasks }}</p>
+      <p>Completed Tasks: {{ completed_tasks }}</p>
+      <p>Pending Tasks: {{ pending_tasks }}</p>
+      <p>Completion Rate: {{ completion_rate }}%</p>
+    </div>
+
+    <div class="welcome-message">
+      <h3>Welcome Message</h3>
+      <p>{{ welcome_message }}</p>
+    </div>
+
+    <div class="new-tasks-section">
+      <h3>Newly Added Tasks</h3>
+      <ul>
+        {% for task in new_tasks %}
+        <li>{{ task[0] }} - Added on: {% if task[1] %}{{ task[1].strftime('%Y-%m-%d %H:%M:%S') }}{% else %}N/A{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

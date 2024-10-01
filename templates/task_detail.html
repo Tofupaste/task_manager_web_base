@@ -1,0 +1,44 @@
+<!-- task_detail.html -->
+
+{% extends 'layout.html' %}
+
+{% block head %}
+  <title>Task Detail</title>
+  <style>
+    /* Tambahkan gaya khusus jika diperlukan */
+  </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="w-50 mx-auto">
+        <h3>Task Detail</h3>
+        <ul>
+            <li><strong>Task Name:</strong> {{ task.task_name }}</li>
+            <li><strong>Description:</strong> {{ task.description }}</li>
+            <li><strong>Created At:</strong> 
+                {% if task.created_at %}
+                    {% if task.created_at is string %}
+                        {{ task.created_at }}
+                    {% else %}
+                        {{ task.created_at.strftime('%Y-%m-%d %H:%M:%S') }}
+                    {% endif %}
+                {% else %}
+                    N/A
+                {% endif %}
+            </li>
+            <li><strong>Deadline:</strong> 
+                {% if task.deadline %}
+                    {% if task.deadline is string %}
+                        {{ task.deadline }}
+                    {% else %}
+                        {{ task.deadline.strftime('%Y-%m-%d %H:%M:%S') }}
+                    {% endif %}
+                {% else %}
+                    N/A
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

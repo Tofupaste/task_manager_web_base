@@ -1,0 +1,64 @@
+body {
+    background-image: url('/static/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    margin-top: 5rem;
+    color: white;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2); /* Tambahkan transparansi ke card */
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+}
+
+.form-label {
+    color: #fff;
+}
+
+.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+    color: #fff;
+}
+
+.form-control:focus {
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.text-center {
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.btn-primary:hover {
+    background-color: #ccc;
+}

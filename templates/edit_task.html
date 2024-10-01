@@ -1,0 +1,32 @@
+<!-- edit_task.html -->
+{% extends 'layout.html' %}
+
+{% block head %}
+  <title>Edit Task</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_add_edit.css') }}">
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="w-75 mx-auto form-container">
+      <h2>Edit Task</h2>
+      <form method="post" action="{{ url_for('edit_task', task_id=task[0]) }}">
+        <div class="form-group">
+            <label for="new_task_name">New Task Name:</label>
+            <input type="text" class="form-control" id="new_task_name" name="new_task_name" value="{{ request.form['new_task_name']|default(task[2], true) }}" required>
+        </div>
+        <div class="form-group">
+            <label for="new_description">New Description:</label>
+            <textarea class="form-control" id="new_description" name="new_description" rows="4" required>{{ request.form['new_description']|default(task[5], true) }}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="new_deadline">New Deadline:</label>
+          <input type="datetime-local" class="form-control" id="new_deadline" name="new_deadline" value="{{ task[6]|default('') }}" required>
+        </div>
+        <!-- Perbaiki input tersembunyi untuk user_id -->
+        <input type="hidden" name="user_id" value="{{ task[1] }}">
+        <button type="submit" class="btn btn-primary">Update Task</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
